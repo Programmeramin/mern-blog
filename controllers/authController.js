@@ -1,16 +1,16 @@
 import User from "../models/usermodel.js";
 import bcryptjs from "bcryptjs";
+import { errorHandler } from "../utils/error.js";
 
 
-export const signup = async (req, res) =>{
+export const signup = async (req, res, next) =>{
    
    
     const {username, email, password} = req.body;
 
     // validataion
     if(!username || !email || !password || username === "" || email === "" || password === ''){
-        return res.status
-        (400).json({message : "All fields are required"});
+       next(errorHandler(400, "All fields are required"));
     }
 
     // hash pass
@@ -26,7 +26,7 @@ export const signup = async (req, res) =>{
         await newUser.save();
         res.json({message : "Signup successful"})
     } catch (error) {
-        return res.status(404).json({message : `${error.message}`})
+        next(error)
     }
 
 } 
