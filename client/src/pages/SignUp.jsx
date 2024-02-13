@@ -55,7 +55,7 @@ const SignUp = () => {
         <div className="flex-1">
         <Link className="font-bold dark:text-white text-4xl mb-3">
 
-          <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 rounded-lg text-white">AMIN </span>
+          <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 rounded-lg text-white">{`AMIN'S`} </span>
           BLOG
           </Link>
           <p className="mt-3 text-xl">This is demo project, You can sign up with your email and password with Google</p>
