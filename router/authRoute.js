@@ -8,8 +8,8 @@ const router = express.Router();
 
 router.post("/signup", SignUp)
 router.post("/signin", SignIn)
-router.post("/google", google)
+router.post("/google", google)      
 
 
 // export default router
-export default router;
+export default router;     

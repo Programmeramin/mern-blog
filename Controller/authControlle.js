@@ -46,7 +46,7 @@ export const SignUp = asyncHandler(async(req, res) =>{
  * @method POST
  * @access public
  */
-
+ 
 
 export const SignIn = asyncHandler(async (req, res) =>{
 
@@ -100,7 +100,7 @@ export const google = asyncHandler(async (req, res) =>{
                 httpOnly : true,
             }).json(rest);
         }else{
-            const generatedPassword = Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8);
+            const generatedPassword = Math.random().toString(36).slice(-8);
 
             const hashPass = bcrypt.hashSync(generatedPassword, 10);
 

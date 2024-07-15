@@ -2,7 +2,7 @@ import { useSelector } from "react-redux"
 
 const ThemeProvider = ({children}) => {
 
-    const { theme } = useSelector((state) => state.theme);
+    const { theme } = useSelector(state => state.theme);
 
   return (
     <>
@@ -16,3 +16,4 @@ const ThemeProvider = ({children}) => {
 }
 
 export default ThemeProvider
+     

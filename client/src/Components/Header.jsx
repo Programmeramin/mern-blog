@@ -2,15 +2,14 @@ import { Button, Navbar, TextInput, Dropdown, Avatar } from "flowbite-react"
 import { Link, useLocation } from "react-router-dom"
 import { IoSearch } from "react-icons/io5";
 import { FaMoon } from "react-icons/fa";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme } from "../redux/theme/themeSlice";
 import { FaSun } from "react-icons/fa6";
 
 const Header = () => {
     const path = useLocation().pathname;
     const dispatch = useDispatch();
-    const {currentUser} = useSelector(state => state.user);
+     
     const {theme} = useSelector((state) => state.theme);
 
   return (
@@ -33,16 +32,16 @@ const Header = () => {
             {theme === "light" ? <FaSun/> : <FaMoon/>}
         </Button>
    
-        {currentUser ? (
+        
           <Dropdown arrowIcon={false} inline label={
             <Avatar 
-            alt="user" img={currentUser.profilePicture}
+            alt="user"
             />
           }>
               
               <Dropdown.Header>
-                 <span className="block text-sm">@{currentUser.username}</span>
-                 <span className="block text-sm font-medium truncate">@{currentUser.email}</span>
+                 <span className="block text-sm"> </span>
+                 <span className="block text-sm font-medium truncate"></span>
               </Dropdown.Header>
                     <Link to="/dashboard?tab=profile">
                       <Dropdown.Item>
@@ -54,9 +53,7 @@ const Header = () => {
                       Sign Out
                     </Dropdown.Item>
           </Dropdown>
-        ) : {
-
-        }}
+       
 
         <Link to="/sign-in">
             <Button gradientDuoTone="purpleToBlue" outline>
