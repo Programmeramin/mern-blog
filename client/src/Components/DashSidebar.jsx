@@ -15,7 +15,7 @@ const DashSidebar = () => {
    if(tabFromUrl){
     setTab(tabFromUrl);
    }
- }, [location.search])
+ }, [location.search])   
 
 
   return (
